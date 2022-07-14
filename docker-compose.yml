@@ -1,10 +1,10 @@
 ---
     version: '3'
     services:
-      bot01:
+      user01:
         image: freqtradeorg/freqtrade
         restart: unless-stopped
-        container_name: bot01
+        container_name: user01
         build:
           context: ../.
           dockerfile: freqport/ta.dockerfile
@@ -14,12 +14,12 @@
         command: >
           trade
           -c /freqtrade/user_data/configs/default.json
-          -c /freqtrade/user_data/configs/keys/bot01.json
+          -c /freqtrade/user_data/configs/keys/user01.json
           --strategy BbandRsi
-      bot02:
+      user02:
         image: freqtradeorg/freqtrade
         restart: unless-stopped
-        container_name: bot02
+        container_name: user02
         build:
           context: ../.
           dockerfile: freqport/ta.dockerfile
@@ -29,12 +29,12 @@
         command: >
           trade
           -c /freqtrade/user_data/configs/default.json
-          -c /freqtrade/user_data/configs/keys/bot02.json
+          -c /freqtrade/user_data/configs/keys/user02.json
           --strategy GodStra
-      bot03:
+      user03:
         image: freqtradeorg/freqtrade
         restart: unless-stopped
-        container_name: bot03
+        container_name: user03
         build:
           context: ../.
           dockerfile: freqport/ta.dockerfile
@@ -44,5 +44,5 @@
         command: >
           trade
           -c /freqtrade/user_data/configs/default.json
-          -c /freqtrade/user_data/configs/keys/bot03.json
+          -c /freqtrade/user_data/configs/keys/user03.json
           --strategy Scalp
