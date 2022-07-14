@@ -1,0 +1,12 @@
+{
+  "exchange": {
+    "name": "",
+    "key": "",
+    "secret": ""
+  },
+  "telegram": {
+    "enabled": false,
+    "token": "",
+    "chat_id": "",
+  }
+}
