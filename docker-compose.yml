@@ -7,7 +7,7 @@
         container_name: bot01
         build:
           context: ../.
-          dockerfile: freqport/Dockerfile
+          dockerfile: freqport/ta.dockerfile
         volumes:
           - "./strategies:/freqtrade/user_data/strategies"
           - "./configs:/freqtrade/user_data/configs"
@@ -22,7 +22,7 @@
         container_name: bot02
         build:
           context: ../.
-          dockerfile: freqport/Dockerfile
+          dockerfile: freqport/ta.dockerfile
         volumes:
           - "./strategies:/freqtrade/user_data/strategies"
           - "./configs:/freqtrade/user_data/configs"
@@ -37,7 +37,7 @@
         container_name: bot03
         build:
           context: ../.
-          dockerfile: freqport/Dockerfile
+          dockerfile: freqport/ta.dockerfile
         volumes:
           - "./strategies:/freqtrade/user_data/strategies"
           - "./configs:/freqtrade/user_data/configs"
