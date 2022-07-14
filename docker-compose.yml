@@ -1,0 +1,48 @@
+---
+    version: '3'
+    services:
+      bot01:
+        image: freqtradeorg/freqtrade
+        restart: unless-stopped
+        container_name: bot01
+        build:
+          context: ../.
+          dockerfile: freqport/Dockerfile
+        volumes:
+          - "./strategies:/freqtrade/user_data/strategies"
+          - "./configs:/freqtrade/user_data/configs"
+        command: >
+          trade
+          -c /freqtrade/user_data/configs/default.json
+          -c /freqtrade/user_data/configs/keys/bot01.json
+          --strategy BbandRsi
+      bot02:
+        image: freqtradeorg/freqtrade
+        restart: unless-stopped
+        container_name: bot02
+        build:
+          context: ../.
+          dockerfile: freqport/Dockerfile
+        volumes:
+          - "./strategies:/freqtrade/user_data/strategies"
+          - "./configs:/freqtrade/user_data/configs"
+        command: >
+          trade
+          -c /freqtrade/user_data/configs/default.json
+          -c /freqtrade/user_data/configs/keys/bot02.json
+          --strategy GodStra
+      bot03:
+        image: freqtradeorg/freqtrade
+        restart: unless-stopped
+        container_name: bot03
+        build:
+          context: ../.
+          dockerfile: freqport/Dockerfile
+        volumes:
+          - "./strategies:/freqtrade/user_data/strategies"
+          - "./configs:/freqtrade/user_data/configs"
+        command: >
+          trade
+          -c /freqtrade/user_data/configs/default.json
+          -c /freqtrade/user_data/configs/keys/bot03.json
+          --strategy Scalp
