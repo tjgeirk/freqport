@@ -10,12 +10,16 @@
           dockerfile: freqport/ta.dockerfile
         volumes:
           - "./strategies:/freqtrade/user_data/strategies"
-          - "./configs:/freqtrade/user_data/configs"
+          - "./configs:/freqtrade/configs"
+          - "./chat_bots:/freqtrade/chat_bots"
+          - "./api_keys:/freqtrade/api_keys"
         command: >
           trade
-          -c /freqtrade/user_data/configs/default.json
-          -c /freqtrade/user_data/configs/keys/user01.json
+          -c /freqtrade/configs/default.json
+          -c /freqtrade/api_keys/user01.json
+          -c /freqtrade/chat_bots/bot01.json
           --strategy BbandRsi
+          
       user02:
         image: freqtradeorg/freqtrade
         restart: unless-stopped
@@ -25,12 +29,16 @@
           dockerfile: freqport/ta.dockerfile
         volumes:
           - "./strategies:/freqtrade/user_data/strategies"
-          - "./configs:/freqtrade/user_data/configs"
+          - "./configs:/freqtrade/configs"
+          - "./chat_bots:/freqtrade/chat_bots"
+          - "./api_keys:/freqtrade/api_keys"
         command: >
           trade
-          -c /freqtrade/user_data/configs/default.json
-          -c /freqtrade/user_data/configs/keys/user02.json
+          -c /freqtrade/configs/default.json
+          -c /freqtrade/api_keys/user02.json
+          -c /freqtrade/chat_bots/bot02.json
           --strategy GodStra
+          
       user03:
         image: freqtradeorg/freqtrade
         restart: unless-stopped
@@ -40,9 +48,12 @@
           dockerfile: freqport/ta.dockerfile
         volumes:
           - "./strategies:/freqtrade/user_data/strategies"
-          - "./configs:/freqtrade/user_data/configs"
+          - "./configs:/freqtrade/configs"
+          - "./chat_bots:/freqtrade/chat_bots"
+          - "./api_keys:/freqtrade/api_keys"
         command: >
           trade
-          -c /freqtrade/user_data/configs/default.json
-          -c /freqtrade/user_data/configs/keys/user03.json
+          -c /freqtrade/configs/default.json
+          -c /freqtrade/api_keys/user03.json
+          -c /freqtrade/chat_bots/bot03.json
           --strategy Scalp
