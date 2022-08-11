@@ -5,7 +5,7 @@ services:
     container_name: "ha_strat_bot"
     build:
       context: "../."
-      dockerfile: "/CryptoBots/Dockerfile"
+      dockerfile: "/freqport/Dockerfile"
     volumes:
       - "./bot1:/freqtrade/user_data"
     command: >
@@ -18,7 +18,7 @@ services:
     container_name: "bbrsi_strat_bot"
     build:
       context: "../."
-      dockerfile: "/CryptoBots/Dockerfile"
+      dockerfile: "/freqport/Dockerfile"
     volumes:
       - "./bot2:/freqtrade/user_data"
     command: >
