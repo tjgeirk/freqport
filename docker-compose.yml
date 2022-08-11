@@ -1,59 +1,28 @@
----
-    version: '3'
-    services:
-      user01:
-        image: freqtradeorg/freqtrade
-        restart: unless-stopped
-        container_name: user01
-        build:
-          context: ../.
-          dockerfile: freqport/ta.dockerfile
-        volumes:
-          - "./strategies:/freqtrade/user_data/strategies"
-          - "./configs:/freqtrade/configs"
-          - "./chat_bots:/freqtrade/chat_bots"
-          - "./api_keys:/freqtrade/api_keys"
-        command: >
-          trade
-          -c /freqtrade/configs/default.json
-          -c /freqtrade/api_keys/user01.json
-          -c /freqtrade/chat_bots/bot01.json
-          --strategy BbandRsi
-          
-      user02:
-        image: freqtradeorg/freqtrade
-        restart: unless-stopped
-        container_name: user02
-        build:
-          context: ../.
-          dockerfile: freqport/ta.dockerfile
-        volumes:
-          - "./strategies:/freqtrade/user_data/strategies"
-          - "./configs:/freqtrade/configs"
-          - "./chat_bots:/freqtrade/chat_bots"
-          - "./api_keys:/freqtrade/api_keys"
-        command: >
-          trade
-          -c /freqtrade/configs/default.json
-          -c /freqtrade/api_keys/user02.json
-          -c /freqtrade/chat_bots/bot02.json
-          --strategy GodStra
-          
-      user03:
-        image: freqtradeorg/freqtrade
-        restart: unless-stopped
-        container_name: user03
-        build:
-          context: ../.
-          dockerfile: freqport/ta.dockerfile
-        volumes:
-          - "./strategies:/freqtrade/user_data/strategies"
-          - "./configs:/freqtrade/configs"
-          - "./chat_bots:/freqtrade/chat_bots"
-          - "./api_keys:/freqtrade/api_keys"
-        command: >
-          trade
-          -c /freqtrade/configs/default.json
-          -c /freqtrade/api_keys/user03.json
-          -c /freqtrade/chat_bots/bot03.json
-          --strategy Scalp
+version: "3.9"
+services:
+  ha_strat_bot:
+    image: freqtradeorg/freqtrade:latest
+    container_name: "ha_strat_bot"
+    build:
+      context: "../."
+      dockerfile: "/CryptoBots/Dockerfile"
+    volumes:
+      - "./bot1:/freqtrade/user_data"
+    command: >
+      trade --strategy ha_strat 
+      -c /freqtrade/user_data/config.json
+      -c /freqtrade/user_data/api_keys.json
+
+  bbrsi_strat_bot:
+    image: freqtradeorg/freqtrade:latest
+    container_name: "bbrsi_strat_bot"
+    build:
+      context: "../."
+      dockerfile: "/CryptoBots/Dockerfile"
+    volumes:
+      - "./bot2:/freqtrade/user_data"
+    command: >
+      trade --strategy ha_strat 
+      -c /freqtrade/user_data/config.json 
+      -c /freqtrade/user_data/api_keys.json
+
