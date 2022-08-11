@@ -1,1 +1,7 @@
-
+{
+  "exchange": {
+    "name": "",
+    "key" : "",
+    "secret" : ""
+  }
+}
