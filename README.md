@@ -1,13 +1,10 @@
 # TO USE:
+ SAVE FILES TO DESKTOP
+Go To: 
+Desktop/CryptoBot/bot1/api_keys.json
+Desktop/Cryptobot/bot2/api_keys.json
 
-# SAVE FILES TO DESKTOP
-
-# Go To: 
-
-Desktop / CryptoBot / bot1 / api_keys.json
-Desktop / Cryptobot / bot2 / api_keys.json
-
-# add your keys to the designated locations: 
+## add your keys to the designated locations: 
 
 {
   "exchange": {
@@ -17,7 +14,7 @@ Desktop / Cryptobot / bot2 / api_keys.json
   }
 }
 
-# It should look like this:
+## It should look like this:
 
 {
   "exchange": {
@@ -27,12 +24,12 @@ Desktop / Cryptobot / bot2 / api_keys.json
   }
 }
 
-# save these files once finished
+## save these files once finished
 
-# open command line (CMD on windows, Terminal on Mac+Linux)
-# for WINDOWS:
+## open command line (CMD on windows, Terminal on Mac+Linux)
+### for WINDOWS:
 		cd Desktop\CryptoBot\
 		docker-compose up
-# for Mac+Linux:
+### for Mac+Linux:
 		cd ~/Desktop/CryptoBot
 		docker-compose up
