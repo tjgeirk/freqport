@@ -52,11 +52,6 @@
     "max_trade_duration_minute": 1440,
     "remove_pumps": false
   },
-  "telegram": {
-    "enabled": true,
-    "token": "1994677257:AAHC8pegZXhiOy_ic0bqlhv46MUmUhfnV6A",
-    "chat_id": "-1001516266971"
-  },
   "bot_name": "ftx",
   "initial_state": "running",
   "force_entry_enable": true,
